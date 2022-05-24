@@ -59,6 +59,8 @@ def update_profile():
     user = User.objects(user_id=user_id).first()
     user.update(**body)
 
+    user = User.objects(user_id=user_id).first()
+
     return json_response(result={
         'user_id': user.user_id,
         'first_name': user.first_name,
